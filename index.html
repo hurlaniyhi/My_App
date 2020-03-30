@@ -1,0 +1,90 @@
+<DOCtYPE html!>
+        <html>
+            <head>
+                <title>Thinlex</title>
+                
+                <style>
+                    .border{
+                        /*background-color: rgba(0,255,0,0.3);*/
+                        border: 1px solid white;
+                        /*height: 530px;*/
+                        /*padding: 20px;*/
+                        margin: 30px 400px;
+                        border-radius: 15%;
+                        height: 580px;
+                        /*background-image: url("C:/Users/HP/Pictures/Camera Roll/thought3.jpg");*/
+                        background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url("./thought4.jpg");
+                        background-size: cover;
+                        /* background-clip: url("C:/Users/HP/Pictures/Camera Roll/transfer.mp4");*/
+                    }
+                        h1{
+                            top: 0;
+                            padding-top: 10px;
+                            padding-bottom: 1px;
+                            text-align: center;
+                            color: white;
+                            /*position:fixed;*/
+                            
+                        }
+                        
+                </style>
+    
+            </head>
+            <body>
+                <div class="border"><br>
+                    
+                    <h1 id="brand"style="font-family: Gill Sans,Florence,cursive;">The Thinklex</h1><br>
+
+                    <h3 style="text-align: center; color:aliceblue;">Please Select an Option</h3><br><br><br><br>
+                    <a href="./calculator.html"><input type="button" value=" Thinklex Calculator" style="width: 250px; height: 45; margin-left: 145px;color: rgba(0,0,255,0.6) ;border-radius: 30%;"></a>
+                    <br><br>
+                    <a href="./equation.html"><input class="test" type="button" value="4 Equations 4 Unknowns Solver " style="width: 250px; height: 45; color: rgba(0,0,255,0.6);margin-left: 145px; border-radius: 30%;"></a>
+                    <br><br>
+                    <a href="./day_getter.html"><input type="button" value="Day Of Any Date" style="width: 250px; height: 40; margin-left: 145px; border-radius: 30%; color: rgba(0,0,255,0.6);"></a>
+                    <br><br>
+                    <a href="./Riddles.html"><input type="button" value="Smart Quiz" style="width: 250px; height: 40; margin-left: 145px; border-radius: 30%; color: rgba(0,0,255,0.6);"></a>
+
+
+
+
+                </div>
+                <script>
+
+                    var count = 0
+                    function reduce(count){
+                        count=0
+                        return count;
+                    }
+          
+          
+                    function design(){
+                        if (count==1){
+                            document.getElementById("brand").style.color = 'orange'
+                        }
+                        else if(count==2){
+                          document.getElementById("brand").style.color = 'Blue' 
+                        }
+                        else if(count==3){
+                          document.getElementById("brand").style.color = 'white' 
+                        }
+                        else if(count==4){
+                          document.getElementById("brand").style.color = 'yellow' 
+                        }
+                        else if(count==5){
+                          document.getElementById("brand").style.color = 'green' 
+                        }
+                        else if(count==6){
+                          document.getElementById("brand").style.color = 'white' 
+                        }
+
+                        
+                        else if (count>6){
+                            count=0
+                        }
+                      count++
+                    }
+                    setInterval(design,500)
+                </script>  
+          
+            </body>
+        </html>

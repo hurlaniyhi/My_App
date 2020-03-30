@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day getter</title>
+        <style>
+            #closure{
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    margin-right: 420px;
+                    margin-left: 400px;
+                    border: 1px solid black;
+                    border-radius: 20%;
+                    color:aliceblue;
+                    background-color: rgba(0, 0, 0, 0.801);
+                    height: 610px;
+                    border-color: rgba(0,255,0,0.3);
+                           
+                    }
+                    button{
+                        width: 80px;
+                        height: 35px;
+                        border-radius: 15%;
+                        margin-left: 225px;
+                        
+                    }
+                    .online{
+                        padding-top: 10px;
+                        padding-left: 85px;
+                        text-align: center;
+                        
+                    }
+                    
+
+        </style>
+    </head>
+    <body>
+        <div id="closure">
+            <a href="./index.html"><input type="button" value="Home" style="margin-left: 80px; margin-top: 20px; margin-bottom: 0px;background-color: purple;border-color: rgba(0,0,255,0.4); border-width: 2px; border-radius: 20%; color: aquamarine; width: 60px; height: 30px"></a>   
+            <h2 style="text-align: center; padding-top: 20px; color: aliceblue"> Welcome To the Day Getter</h2>
+            <h3 style="text-align: center; padding-top: 30px; font-weight: bold; color:aliceblue">Please Enter The Date</h3>
+
+            <table class="online">
+                <tr>
+  
+            <td>DD</td>
+            <td></td>
+            <td><input style="width: 55px; height: 30px; " type="number" id="DD"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>MM</td>
+            <td></td>
+            <td><input style="width: 55px; height: 30px;" type="number" id="MM"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>YY</td>
+            <td></td>
+            <td><input style="width: 55px; height: 30px;" type="number" id="YY"></td>
+            </tr>
+            
+            </table>
+               
+            <button class="getit"style="margin-top: 50px" onclick="getter()">Get Day</button> 
+            
+            <br><br>
+
+            <input style="width: 150px; height: 30px; margin-left: 185px; margin-top: 40px; color: rgba(0,0,255,0.6); text-align: center; font-weight:900;" type="text" id="day"><br><br>
+            <button class="reset"style="margin-top: 80px;" onclick="refresh()">Reset</button>
+
+        </div>
+
+        <script>
+            function refresh(){
+                document.getElementById("DD").value = ""
+                document.getElementById("MM").value = ""
+                document.getElementById("YY").value = ""
+                document.getElementById("day").value = ""
+            }
+
+            
+            function getter(){
+
+                let DD=document.getElementById("DD").value
+                let MM=document.getElementById("MM").value
+                let YY=document.getElementById("YY").value
+    
+
+                let y=1902;
+                let f=0;
+                let prevmonth;
+                let weekday;
+                let n=0;
+                let jan=31; let mar=31; let apr=30; let may=31; let jun=30; let jul=31; let aug=31; let sep=30; let oct=31; let nov=30; let dec=31;
+
+
+                let feb
+                let year=Number(YY)
+                let month=Number(MM)
+                let day=Number(DD)
+                let resp
+
+
+                   if(year>=y){
+                       
+                    if((year%4)!=0){
+                        feb=28;
+                    }
+                    else {
+                        feb=29;
+                    }
+
+                switch (month){
+                    
+                    case 1: if(day>jan || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=day;}break;
+                    case 2: if(day>feb || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+day;}break;
+                    case 3:if(day>mar || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+day;}break;
+                    case 4: if(day>apr || day<=0){
+                        alert("Invalid day for that month")}
+                            else{prevmonth=jan+feb+mar+day;}break;
+                    case 5: if(day>may || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+day;}break;
+                    case 6: if(day>jun || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+may+day;}break;
+                    case 7:if(day>jul || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+may+jun+day;}break;
+                    case 8: if(day>aug || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+may+jun+jul+day;}break;
+                    case 9: if(day>sep || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+may+jun+jul+aug+day;}break;
+                    case 10: if(day>oct || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+may+jun+jul+aug+sep+day;}break;
+                    case 11: if(day>nov || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+may+jun+jul+aug+sep+oct+day;}break;
+                    case 12: if(day>dec || day<=0){
+                        alert("Invalid day for that month")}
+                            else {prevmonth=jan+feb+mar+apr+may+jun+jul+aug+sep+oct+nov+day; }break;
+                    default: alert("The month you entered is invalid"); break;
+        
+                    }
+
+                    while(y!=year){
+                        if((y%4)!=0){
+                            f=365;}
+                        else{f=366;}
+                        n+=f;
+                        y++;
+                    }
+
+                    weekday=((n+prevmonth)%7);
+
+                switch(weekday){
+                    case 5: resp="SUNDAY";break;
+                    case 6: resp="MONDAY";break;
+                    case 0: resp="TUESDAY";break;
+                    case 1: resp="WEDNESDAY";break;
+                    case 2: resp="THURSDAY";break;
+                    case 3: resp="FRIDAY";break;
+                    case 4: resp="SATURDAY";break;
+
+                }
+                
+                   if(resp != "SUNDAY" && resp != "MONDAY" && resp != "TUESDAY" && resp != "WEDNESDAY" && resp != "THURSDAY" && resp != "FRIDAY" && resp != "SATURDAY" ){
+                       document.getElementById("day").value = "invalid input"
+                   }
+                   else{
+                    document.getElementById("day").value = resp
+                }
+            }
+    
+                else if(year<y){
+            alert("this program does not work with years less than 1902");
+                }
+            }
+
+        </script>
+    </body>
+</html>

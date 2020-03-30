@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SmartQuiz</title>
+            <style>
+                .border{
+                        /*background-color: rgba(0,255,0,0.3);*/
+                        border: 1px solid blue;
+                        /*height: 530px;*/
+                        /*padding: 20px;*/
+                        margin: 30px 400px;
+                        border-radius: 15%;
+                        height: 580px;
+                        /*background-image: url("C:/Users/HP/Pictures/Camera Roll/thought3.jpg");*/
+                        /*background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%), url("./thought4.jpg");*/
+                        background-size: cover;
+                        /* background-clip: url("C:/Users/HP/Pictures/Camera Roll/transfer.mp4");*/
+                        background-color: blueviolet;
+                    }
+                    .smart{
+                        margin-left: 60px;
+                        margin-top: 30px;
+                        border-radius: 20%;
+                    
+                    }
+                    button{
+                        margin-top: 50px;
+                        width: 100px;
+                        height: 30px;
+                        margin-left: 60px;
+                        border-radius: 15%;
+                        
+                        
+                    }
+                    #qst{
+                        margin-top: 22px;
+                        margin-left: 30px; 
+                        text-align: center; 
+                        width: 485px;
+                        border-radius: 100px;
+                        height: 90px;
+                        padding-left: 7px;
+                        /*display:block;
+                        -webkit-transition: all .1s ease;
+                        -moz-transition: all .1s ease;
+                        -ms-transition: all .1s ease;
+                        -o-transition: all .1s ease;
+                        transition: all .1s ease*/
+
+
+                        
+
+                    }
+                    
+            </style>
+    </head>
+    <body>
+
+        <div class="border">
+                <a href="./index.html"><input type="button" value="Home" style="margin-left: 60px; margin-top: 10px; margin-bottom: 0px;background-color: purple;border-color: rgba(0,0,255,0.4); border-width: 2px; border-radius: 100px; color: aquamarine; width: 60px; height: 30px"></a>
+                <button id="time" style="margin-top: 10px; border-radius: 100%; margin-left: 100px; margin-right: 0px;"></button>
+                <p id="Qdisp" style="display: inline; padding-left: 100px; font-weight: bold; color: white"></p>        
+            <input id="qst" type="button"><br><br>
+            <table class="smart">
+                <tr>
+                    <td>A</td><td></td><td><input type="button" style="width: 400px; height: 45px; border-radius: 100px; border-color: blue;" id="opt1" onclick="Answer()"></td>
+                </tr>
+                <tr>
+                    <td>B</td><td></td><td><input type="button" style="width: 400px; height: 45px; border-radius: 100px; margin-top: 20px; border-color: blue;" id="opt2" onclick="Answer1()"></td>
+                </tr>
+                <tr>
+                    <td>C</td><td></td><td><input type="button" style="width: 400px; height: 45px; border-radius: 100px; margin-top: 20px; border-color: blue;" id="opt3" onclick="Answer2()"></td>
+                </tr>
+                    <td>D</td><td></td><td><input type="button" style="width: 400px; height: 45px; border-radius: 100px; margin-top: 20px; border-color: blue;" id="opt4" onclick="Answer3()"></td>
+                </tr>
+            </table>
+            <button onclick="restart()">Restart</button>
+            <button id="terminate" style="margin-left: 210px" onclick="next()">Next</button>
+            <p id="check"></p>
+            <p id="score"></p>
+            <p id="count"></p>
+            <p id="repeat"></p>
+            <p id="Qnumb"></p>
+
+        </div>
+
+        <script>
+            
+           
+                       
+                        document.getElementById("count").value = 1  
+                        document.getElementById("score").value = 0
+                        document.getElementById("Qnumb").value = 0  
+                        let myO = {}  
+                        let arr1=[] 
+                        let countme = 1
+                        
+
+
+function next(){
+
+            countme = 1
+            
+
+            let a = "From which language is the word 'ketchup' derived?"
+            let b = "Which is the country with the largest population in europe?"
+            let c = "what are made and repair by cobbler?"
+            let d = "what is an endoscope used to examine?"
+            let e ="Apart from womanizing and producing films, what was the other passion of Howard Hughes?"
+            let f = "what colour are the four stars on the flag of new zealand?"
+            let g = "how many state makes up the united states of America?"
+            let h = "which English football team plays its home matches at Old Trafford?"
+            let i = "comedy duo Ant and Dec are originally from which English city?"
+            let j = "In the medical profession, what do the initials 'GP' stands for?"
+            let k = "which football team won the champions league in 2013?"
+            let l = "Maris Piper and King Edward are varieties of what?"
+            let m = "H2O is the chemical formula for what?"
+            let n = "what type of creature lives in an apiary?"
+            let o = "A rugby union team is made up of how many players?"
+            let p = "What colour flag is awarded to a beach that meets high standards for cleanliness, safety and water quality?"
+            let q = "in which religion is krishna a god?"
+            let r = "In which sport are there playing positions called flanker, fly half and tight-head prop?"
+            let s = "In which decade did Queen Elizabeth II become the British monarch?"
+            let t = "The phrase 'three strikes and you're out' originate from which sport?"
+            let u = "Which English city is often abbreviated to soton?"
+            let v = "Which mountain range forms a natural border between France and Spain?"
+            let w = "in which sport may a player score a birdie, eagle or albatross"
+            let x = "Goal shooter, goal attack and wing attack are playing positions in which sport?"
+            let y = "Carrow Road is the home ground of which English football team?"
+            let z = "prior to joining the euro, what was the currency of Spain?"
+            let aa = "Harley Street in london is commonly associated with which profession?"
+            let bb = "calcio is italian word for which sport?"
+            let cc = "The most basic of test instrument is the?"
+            let dd = "Gammar-ray can be detected by passing them through"
+            let ee = "The intensity of the earthquake is measured with a ..... "
+            let ff = "The fuse wire is made of ....."
+            let gg = "Bats can fly in the dark without hitting anything because"
+            let hh = "As a person moves closer to a plane mirror, the size of the image formed ...."
+            let ii = " Primary colours are...."
+            let jj = "A pyrometer is used to measure....."
+            let kk = "whats the apparatus used in submarines to give clear view of the objects on the surface of the ocean or ground"
+            let ll = "The sky is blue because of ..."
+            let mm = "Short sightedness is corrected by ...."
+            let nn = "The guilder was the former currency of which European country"
+            let oo = "A round of championship golf consists of how many holes?"
+            let pp = "some of the snails are mountains. All mountains adore cats. Thus, all snails adore cats"
+            let qq = "All alligators can fly. All ogres are alligators. Thus, all ogres can fly."
+            let rr = "Bad people cheat or steal. Jane is a good girl"
+            let ss = "Some men are European. Europeans have three legs"
+            let tt = "Good supervisors are banished from the sky. Bad supervisors can sing."
+
+            let Question = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn,oo,pp,qq,rr,ss,tt]
+
+
+            let ans = ["Chinese","Russia","Shoes","The inside of the body","Aviation","Red","50 states","Manchester United",
+                       "Newcastle upon Tyne","General practitioner","Bayern munich","potato","Water","Bee","15","Blue","Hinduism",
+                       "Rugby union","1950s","Baseball","Southampton","The pyrenees","Golf","Netball","Norwich city","Peseta",
+                       "Medicine","Football","Galvanometer","Electric and Magnetic Fields","Seismograph","Lead-Tin alloy","They are guided by ultrasonic waves produced by them",
+                        "increases","Red, blue, green","High temperature","periscope","the scattering of light by dust particles",
+                       "concave lens","Netherlands","18","incorrect","correct","Jane does not steal","Men with two legs are not European","None of the above"]
+
+
+            let option = [["Italy","japan","England","Chinese"],["Netherland","Russia","France","England"],["Bags","Shoes","Phone","Watch"],["The pressure","The heat of the body","The inside of the body","The body weight"],["Golf","Aviation","Sleeping","None of the above"],
+                         ["Red","Yellow","Green","Grey"],["25 states","70 states","30 states","50 states"],["Leicester city","Mancity","RealMadrid","Manchester United"],
+                         ["Brighton","Newcastle upon Tyne","Bowie Maryland","None of the above"],["General manager","General motivator","General practitioner","Growth mode"],
+                         ["Barcelona","Liverpool","Chelsea","Bayern munich"],["Salad","Tourist center","potato","All of the above"],["Salt","Water","Sugar","Acid"],["Buffalo","Snail","Bee","none of the Above"],["10","15","12","18"],["Gold","Blue","White","Red"],
+                          ["Budhism","Hinduism","Islam","none of the above"],["Hockey","Handball","Rugby union","Football"],["1950s","1890s","1878","1880"],
+                        ["Baseball","Golf","Basketball","None of the above"],["Tottenham","Southon","Southing","Southampton"],["The highlander","The vikings","The pyrenees","None of the above"],
+                        ["Netball","Golf","Hockey","Rugby union"],["Netball","Golf","Football","Hockey"],["Manchester city","Manchester united","Leicester","Norwich city"],
+                         ["sectant","Peseta","All of the above","one of the above"],["Engineering","Law","Medicine","Psychology"],["Rugby","Hockey","Basketball","Football"],
+                        ["Ammeter","Voltmeter","Tester","Galvanometer"],["Gravitational Field","Electric Field","Magnetic Field","Electric and Magnetic Fields"],
+                        ["Barometer","Periscope","Hydrometer","Seismograph"],["Copper","Tungsten","Lead-Tin alloy","Aluminium"],["They are flying mammals","Their night vision is good","They are guided by ultrasonic waves produced by them","Of no scientific reason"],
+                        ["increases","decreases","first increases and then decreases","remains the same"],["Green, yellow, blue","Red, black, blue","Red, blue, green","None of the above"],
+                         ["Low temperature","High pressure","High temperature","Low pressure"],["periscope","sectant","stereoscope","telescope"],
+                        ["the moisture present in the air","the scattering of light by dust particles","combination of various lights producing blue colour","All of the above"],
+                        ["convex lens","concave lens","concave mirror","None of the above"],["France","Netherlands","Sweden","None of the above"],["17","11","15","18"],
+                        ["correct","incorrect"," "," "],["correct","incorrect"," "," "],["Jane cheats","Jane Steals","Jane does not steal","Jane cheats and steals"],
+                        ["Men with two legs are not European","Europeans, who are men, may have three legs","Europeans with two legs can be men","There are no non-European men with three legs"],
+                        ["Bad supervisors are falling from the sky","Good supervisors who can fly can also sing","Some bad supervisors can't sing","None of the above"]]
+                    
+
+                        document.getElementById("opt1").style.backgroundColor = "white"
+                        document.getElementById("opt2").style.backgroundColor = "white"
+                        document.getElementById("opt3").style.backgroundColor = "white"
+                        document.getElementById("opt4").style.backgroundColor = "white"
+                        
+                    if (document.getElementById("count").value <= 10){
+                        let generate = Math.floor(Math.random() * 46)
+                         
+                        while (generate in myO){
+                            generate = Math.floor(Math.random() * 46)
+                        }
+                        arr1.push(generate)
+                        myO[generate] = 0
+                        
+
+                        document.getElementById("qst").value = Question[generate]
+                        document.getElementById("opt1").value = option[generate][0]
+                        document.getElementById("opt2").value = option[generate][1]
+                        document.getElementById("opt3").value = option[generate][2]
+                        document.getElementById("opt4").value = option[generate][3]
+                    document.getElementById("check").value = ans[generate]
+
+                    document.getElementById("count").value = document.getElementById("count").value + 1 
+                    document.getElementById("Qnumb").value = document.getElementById("Qnumb").value + 1
+                    }
+                    else {
+
+                        clearInterval(stopme)
+                        document.getElementById("time").innerHTML=""
+                        document.getElementById("opt1").value = ""
+                        document.getElementById("opt2").value = ""
+                        document.getElementById("opt3").value = ""
+                        document.getElementById("opt4").value = ""
+                        document.getElementById("time").style.backgroundColor = "white"
+
+                        let scoreCalc = (document.getElementById("score").value/100)*100
+
+                        document.getElementById("terminate").innerHTML = "The end"
+                        document.getElementById("qst").value = ` YOU SCORE :  ${scoreCalc} / 100 `
+                        if(scoreCalc >= 80){
+                            document.getElementById("qst").style.fontWeight = 900
+                            document.getElementById("qst").style.color = "Green"
+                            alert("YOU ARE TOO GOOD")
+                        }
+                        else if(scoreCalc >=50 && scoreCalc < 80){
+                            document.getElementById("qst").style.fontWeight = 900
+                            document.getElementById("qst").style.color = "Blue"
+                        }
+                        else {
+                            document.getElementById("qst").style.fontWeight = 900
+                            document.getElementById("qst").style.color = "Red"
+                        }
+                        
+                    }
+                    document.getElementById("Qdisp").innerHTML = `${document.getElementById("Qnumb").value} / 10`
+
+                    
+
+}
+next();
+
+function restart(){
+    document.getElementById("count").value=1
+    document.getElementById("score").value=0
+    document.getElementById("qst").style.fontWeight = 100
+    document.getElementById("qst").style.color = "Black"
+    document.getElementById("terminate").innerHTML = "next"
+    myO={}
+    arr1 = []
+    document.getElementById("Qnumb").value = 0
+    clearInterval(stopme)
+    stopme = setInterval(timy,1000)
+
+
+    next()
+}
+
+
+
+function Answer(){
+                         if ((document.getElementById("opt2").style.backgroundColor != "white") 
+                         || (document.getElementById("opt3").style.backgroundColor != "white") 
+                         || (document.getElementById("opt4").style.backgroundColor != "white")){
+                            document.getElementById("opt1").style.backgroundColor = "white"
+                            
+                         }
+                        else{
+                            
+                            if (document.getElementById("opt1").value == document.getElementById("check").value){
+                                
+                                document.getElementById("opt1").style.backgroundColor = "Green"
+                                document.getElementById("score").value += 10 
+                                
+                            }
+                            else {
+
+                                document.getElementById("opt1").style.backgroundColor = "Red"
+
+                                if(document.getElementById("opt2").value == document.getElementById("check").value){
+                                    document.getElementById("opt2").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt3").value == document.getElementById("check").value){
+                                    document.getElementById("opt3").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt4").value == document.getElementById("check").value){
+                                    document.getElementById("opt4").style.backgroundColor = "Green"
+                                }
+
+
+
+                            }
+                        }}
+                        function Answer1(){
+                            if ((document.getElementById("opt1").style.backgroundColor != "white") 
+                         || (document.getElementById("opt3").style.backgroundColor != "white") 
+                         || (document.getElementById("opt4").style.backgroundColor != "white")){
+                            document.getElementById("opt2").style.backgroundColor = "white"
+                            
+                         }
+                        else{
+
+                            if (document.getElementById("opt2").value == document.getElementById("check").value){
+                            
+                                document.getElementById("opt2").style.backgroundColor = "Green"
+                                document.getElementById("score").value += 10
+                                
+                            }
+                            else {
+                                
+                                document.getElementById("opt2").style.backgroundColor = "Red"
+
+                                if(document.getElementById("opt1").value == document.getElementById("check").value){
+                                    document.getElementById("opt1").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt3").value == document.getElementById("check").value){
+                                    document.getElementById("opt3").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt4").value == document.getElementById("check").value){
+                                    document.getElementById("opt4").style.backgroundColor = "Green"
+                                }
+
+                                
+                            }
+                        }}
+                        function Answer2(){
+                            if ((document.getElementById("opt2").style.backgroundColor != "white") 
+                         || (document.getElementById("opt1").style.backgroundColor != "white") 
+                         || (document.getElementById("opt4").style.backgroundColor != "white")){
+                            document.getElementById("opt3").style.backgroundColor = "white"
+                            
+                         }
+                        else{
+                         
+
+
+                            if (document.getElementById("opt3").value == document.getElementById("check").value){
+                            
+                                document.getElementById("opt3").style.backgroundColor = "Green"
+                                document.getElementById("score").value += 10
+                                
+                            }
+                            else {
+                                
+                                document.getElementById("opt3").style.backgroundColor = "Red"
+
+                                if(document.getElementById("opt2").value == document.getElementById("check").value){
+                                    document.getElementById("opt2").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt4").value == document.getElementById("check").value){
+                                    document.getElementById("opt4").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt1").value == document.getElementById("check").value){
+                                    document.getElementById("opt1").style.backgroundColor = "Green"
+                                }
+
+                            }
+                        } 
+                        }
+                        function Answer3(){
+                            if ((document.getElementById("opt2").style.backgroundColor != "white") 
+                         || (document.getElementById("opt3").style.backgroundColor != "white") 
+                         || (document.getElementById("opt1").style.backgroundColor != "white")){
+                            document.getElementById("opt4").style.backgroundColor = "white"
+                            
+                         }
+                        else{
+
+                            if (document.getElementById("opt4").value == document.getElementById("check").value){
+                                
+                                document.getElementById("opt4").style.backgroundColor = "Green"
+                                document.getElementById("score").value += 10
+                            }
+                            else {
+                                
+                                document.getElementById("opt4").style.backgroundColor = "Red"
+
+                                if(document.getElementById("opt2").value == document.getElementById("check").value){
+                                    document.getElementById("opt2").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt3").value == document.getElementById("check").value){
+                                    document.getElementById("opt3").style.backgroundColor = "Green"
+                                }
+                                else if(document.getElementById("opt1").value == document.getElementById("check").value){
+                                    document.getElementById("opt1").style.backgroundColor = "Green"
+                                }
+
+                            }
+                        }}
+                        
+                        function timy(){
+                            document.getElementById("time").innerHTML = countme
+                            countme++
+                            if (countme > 6){
+                              if (document.getElementById("time").style.backgroundColor == "white"){
+                               document.getElementById("time").style.backgroundColor = "Red"
+                               }
+                               else{document.getElementById("time").style.backgroundColor = "white"}
+                               
+                            }
+                            else{document.getElementById("time").style.backgroundColor = "white"}
+                            if(countme>11){
+                                
+                                document.getElementById("time").innerHTML = ""
+
+                               next()
+                            }
+                        }
+                        
+                       let stopme = setInterval(timy,1000)
+
+                        
+
+        </script>
+
+    </body>
+</html>

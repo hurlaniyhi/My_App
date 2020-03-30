@@ -1,0 +1,355 @@
+<DOCTYPE html>
+        <html>
+            <head>
+                <title>four_by_four_equation</title>
+                <style>
+                    #closure{
+                        margin-top: 20px;
+                        margin-bottom: 10px;
+                        margin-right: 420px;
+                        margin-left: 390px;
+                        border: 1px solid black;
+                        border-radius: 20%;
+                        color: rgba(0,0,255,0.6);
+                        background-color: rgba(0, 0, 0, 0.801);
+                        height: 610px;
+                        border-color: rgba(0,255,0,0.3);
+                    
+                        
+                    }
+                    .input{
+                        width: 60px;
+                        height: 10px;
+                        padding-left: 170px;
+                        padding-top: 10px;
+                        color: aliceblue
+                        
+                    }
+                    input[type="number"]{
+                        width: 60px;
+                    }
+                    .tables{
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        padding-top: 35px;
+                        color: aliceblue;
+                    }
+                    input[type="button"]{
+                        width: 60px;
+                        height: 27px;
+                        border-radius: 15%;
+                    }
+    
+                </style>
+            </head>
+            <body class="equation">
+                <div id="closure">
+                    <a href="./index.html"><input type="button" style="margin-left: 80px; padding-bottom: px; border-radius: 20%; margin-top: 8px; background-color: purple; border-color: rgba(0,0,255,0.4); color:aquamarine;" value="Home"></a>
+                <h4 style="text-align: center; padding-top: 1px; color: aliceblue;" ><i><strong>Instruction : Enter the Coefficients of</strong></i></h4>
+                 <h4 style="text-align: center; padding-bottom: 5px; color: aliceblue;"><i style="line-height: 3px;">Four Linear Equations (4 unknowns), Then Click on "Solution"</i></h4>
+                
+                    <div class="tables">
+                        <tr>
+                            <td><input id="a" type="number"><i> X1</i> +</td>
+                            <td><input id="b" type="number"><i> X2</i> +</td>
+                            <td><input id="c" type="number"><i> X3</i> +</td>
+                            <td><input id="d" type="number"><i> X4</i></td>
+                            <td>&nbsp &nbsp= &nbsp</td>
+                            <td><input id="A" type="number"></td>
+    
+                        </tr>
+                        <tr> <br><br>
+                            <td><input id="e" type="number"><i> X1</i> +</td>
+                            <td><input id="f" type="number"><i> X2</i> +</td>
+                            <td><input id="g" type="number"><i> X3</i> +</td>
+                            <td><input id="h" type="number"><i> X4</i></td>
+                            <td>&nbsp &nbsp= &nbsp</td>
+                            <td><input id="B" type="number"></td>
+                        </tr>
+    
+                        <tr><br><br>
+                            <td><input id="i" type="number"><i> X1</i> +</td>
+                            <td><input id="j" type="number"><i> X2</i> +</td>
+                            <td><input id="k" type="number"><i> X3</i> +</td>
+                            <td><input id="l" type="number"><i> X4</i></td>
+                            <td>&nbsp &nbsp=&nbsp</td>
+                            <td><input id="C" type="number"></td>
+    
+                        </tr>
+       
+                        <tr> <br><br>
+                             <td><input id="m" type="number"><i> X1</i> +</td>
+                             <td><input id="n" type="number"><i> X2</i> +</td>
+                             <td><input id="o" type="number"><i> X3</i> +</td>
+                             <td><input id="p" type="number"><i> X4</i></td>
+                             <td>&nbsp &nbsp=&nbsp</td>
+                             <td><input id="D" type="number"></td>
+        
+                        </tr>
+                    
+    
+                </table>
+                <br><br><br>
+                <input class="show" style="margin-left: 220px;"type="button" value="Solution" onclick="Answer()">
+
+                <table class="input">
+                    <tr>
+                        <td>X1</td>
+                        <td></td>
+                        <td>=</td>
+                        <td></td>
+                        <td><input id="x1" type="text" style="width: 60px; text-align: center;"></td>
+                    </tr>
+                    <tr><br><br>
+                        <td>X2</td>
+                        <td></td>
+                        <td>=</td>
+                        <td></td>
+                        <td><input id="x2" type="text" style="width: 60px; text-align: center;"></td>
+                    </tr>
+                    <tr>
+                        <td>X3</td>
+                        <td></td>
+                        <td>=</td>
+                        <td></td>
+                        <td><input id="x3" type="text" style="width: 60px; text-align: center;"></td>
+                    </tr>
+                    <tr>
+                        <td>X4</td>
+                        <td></td>
+                        <td>=</td>
+                        <td></td>
+                        <td><input id="x4" type="text" style="width: 60px; text-align: center;"></td>
+                    </tr>
+                
+            </table><br>
+            <input class="clear" style="margin-left: 220px; margin-top: 15px;"type="button" value="Reset" onclick="refresh()">
+        </div>
+        </div>
+    
+        <script>
+
+
+                 function refresh(){
+
+                    document.getElementById("a").value = ""
+                    document.getElementById("b").value = ""
+                    document.getElementById("c").value = ""
+                    document.getElementById("d").value = ""
+                    document.getElementById("A").value = ""
+                    document.getElementById("e").value = ""
+                    document.getElementById("f").value = ""
+                    document.getElementById("g").value = ""
+                    document.getElementById("h").value = ""
+                    document.getElementById("B").value = ""
+                    document.getElementById("i").value = ""
+                    document.getElementById("j").value = ""
+                    document.getElementById("k").value = ""
+                    document.getElementById("l").value = ""
+                    document.getElementById("C").value = ""
+                    document.getElementById("m").value = ""
+                    document.getElementById("n").value = ""
+                    document.getElementById("o").value = ""
+                    document.getElementById("p").value = ""
+                    document.getElementById("D").value = ""
+
+                    document.getElementById("x1").value = ""
+                    document.getElementById("x2").value = ""
+                    document.getElementById("x3").value = ""
+                    document.getElementById("x4").value = ""
+
+                     }                    
+            
+
+
+
+
+
+
+                    function Answer(){
+                       
+                    
+                    let a = document.getElementById("a").value
+                    let b = document.getElementById("b").value
+                    let c = document.getElementById("c").value
+                    let d = document.getElementById("d").value
+                    let A = document.getElementById("A").value
+                    let e = document.getElementById("e").value
+                    let f = document.getElementById("f").value
+                    let g = document.getElementById("g").value
+                    let h = document.getElementById("h").value
+                    let B = document.getElementById("B").value
+                    let i = document.getElementById("i").value
+                    let j1 = document.getElementById("j").value
+                    let k = document.getElementById("k").value
+                    let l = document.getElementById("l").value
+                    let C = document.getElementById("C").value
+                    let m = document.getElementById("m").value
+                    let n = document.getElementById("n").value
+                    let o = document.getElementById("o").value
+                    let p = document.getElementById("p").value
+                    let D = document.getElementById("D").value
+                
+                //.....................................
+              
+                if (a =="" || b =="" || c == "" || d == "" || A == "" || e == "" || f == "" || g == "" || h == "" || B == ""
+                || i == "" || j == "" || k == "" || l == "" || C == "" || m == "" || n == "" || o == "" || p == "" || D == ""){
+            alert("please input all coeficients")
+        }
+
+        else{
+        
+                
+    
+    
+               let a1 = [a,b,c,d,A]
+               let a2 = [e,f,g,h,B]
+               let a3 = [i,j1,k,l,C]
+               let a4 = [m,n,o,p,D]
+
+               a1=a1.map(Number)
+               a2=a2.map(Number)
+               a3=a3.map(Number)
+               a4=a4.map(Number)
+
+                    
+
+
+            if (a1[0]==0){ 
+                if (a2[0] != 0){
+                    for (var j=0; j<=4; j++){
+                    var temp = a1[j]
+                    a1[j]=a2[j]
+                    a2[j]=temp
+                
+                   }
+                }
+                if (a1[0]==0){
+                    for (var j=0; j<=4; j++){
+                    var temp = a1[j]
+                    a1[j]=a3[j]
+                    a3[j]=temp
+                     }
+                      }
+                if (a1[0]==0){
+                    for (var j=0; j<=4; j++){
+                    var temp = a1[j]
+                    a1[j]=a4[j]
+                    a4[j]=temp
+                   }
+                  }
+                    }
+            if (a1[0]==0){
+                alert("this equation do not have solution")
+                   }
+            if (a1[0] != 0){
+                var temp = a1[0]
+                for(var j=0; j<=4; j++){
+                a1[j] = a1[j]/temp
+            }
+            }
+            var temp = -a2[0]
+            for (var j=0; j<=4; j++){
+                a2[j] = a2[j] + (a1[j]*temp)
+            }
+            
+            var temp = -a3[0]
+            for (var j=0; j<=4; j++){
+                a3[j] = a3[j] + (a1[j]*temp)
+            }
+
+            var temp = -a4[0]
+            for (var j=0; j<=4; j++){
+                a4[j] = a4[j] + (a1[j]*temp)
+            }
+
+            if (a2[1] == 0 ) {  
+                for (var j=1; j<=4; j++){
+                var temp = a2[j]
+                a2[j] = a3[j]
+                a3[j] = temp
+                }
+
+                if(a2[1] == 0){
+                    for (var j=1; j<=4; j++){
+                        var temp = a2[j]
+                        a2[j] = a4[j]
+                        a4[j] = temp
+                    }
+                }
+            }
+            if (a2[1] == 0 ) {
+                alert("this equation did not have solution")
+            }
+            
+            if (a2[1] != 0 ) {
+                var temp = a2[1]
+                for(var j=1; j<=4; j++){
+                    a2[j] = a2[j]/temp
+                }
+        
+                var temp = -a3[1]
+    
+                for (var j=1; j<=4; j++ ) {
+                    a3[j] = a3[j] + (a2[j] * temp)
+                }
+       
+                var temp = -a4[1]
+
+                for (var j=1; j<=4; j++ ) {
+                    a4[j] = a4[j] + (a2[j] * temp) 
+                }
+            }
+
+
+            if (a3[2] == 0){
+                for (var j=2; j<=4; j++) {
+                    var temp = a3[j]
+                    a3[j] = a4[j]
+                    a4[j] = temp
+                }
+            }
+
+            if (a3[2] == 0) {
+                alert("this equation did not have solution")
+            }	
+
+            if (a3[2] != 0){
+                var temp = a3[2]	
+                for(j=2; j<=4; j++){
+                    a3[j] = a3[j]/temp
+                }
+                var temp = -a4[2]
+    
+                for (var j=2; j<=4; j++ ){
+                    a4[j] = a4[j] + (a3[j] * temp) 
+                }
+            }
+
+
+            if (a4[3] == 0 ) {
+                alert("this equation did not have solution")
+            }
+            
+            if (a4[3] != 0 ) {
+                var temp = a4[3]
+                for(var j=3; j<=4; j++){
+                    a4[j] = a4[j]/temp
+                }
+            }
+
+        let x4 = a4[4] / a4[3]
+        let x3 = (a3[4]-(x4*a3[3]))/a3[2]
+        let x2 = (a2[4]-(x4*a2[3])-(x3*a2[2]))/a2[1]
+        let x1 = (a1[4]-(x4*a1[3])-(x3*a1[2])-(x2*a1[1]))/a1[0]
+
+        document.getElementById("x1").value = String(x1)
+        document.getElementById("x2").value = String(x2)
+        document.getElementById("x3").value = String(x3)
+        document.getElementById("x4").value = String(x4)
+
+            }
+        }
+        </script>
+    </body>
+</html>

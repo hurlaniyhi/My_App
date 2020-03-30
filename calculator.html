@@ -1,0 +1,390 @@
+<DOCTYPE html!>
+    <html>
+        <head>
+            <title>Rhydhur's Calculator</title>
+            <style>
+                .contain{
+                    font-size: 0;
+                }
+                input[type="button"]{
+                    border: 1px solid white;
+                    border-radius: 10%;
+                    width: 100%;
+                    height: 100%;
+                    background-color: black;
+                    opacity: 0.7;
+                   
+                }
+                #result{
+                    border: 2px solid black;
+                    width: 100%;
+                    height: 100%;
+                    text-align: right;
+                    border-top-style:hidden;
+                    border-right-style: solid;
+                    border-left-style: solid;
+                    border-bottom-style: solid;
+                    margin: 0;
+                    outline: 0 none;
+                    border-bottom-right-radius: 10%;
+                    border-bottom-left-radius: 10%;
+                    padding: 0;
+                    font-weight: bolder;
+                
+        
+
+                }
+                #input{
+                    /*border: 2px solid black;*/
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-left-style: solid;
+                    border-bottom-style: hidden;
+                    width: 100%;
+                    height: 100%;
+                    text-align: left;
+                    border-radius: 2%;
+                    margin: 0;
+                    outline: none;
+                    border-top-right-radius: 10%;
+                    border-top-left-radius: 10%;
+
+                }
+                .closure{
+                    border: 2px solid black;
+                    border-radius: 10%;
+                    padding: 10px;
+                    /*background-color: rgba(0,0,255,0.3);*/
+                    border-color: white;
+                    background-color: black;
+                    height: 500px;
+                    width: 300px;
+                    margin-left: 530px;
+                    margin-right: 500px;
+                    margin-top: 0px;
+                    margin-bottom: 30px; 
+                    padding-top: 30px;
+
+                }
+                #funct{
+                    color: black;
+                }
+                .norm{
+                    color: white;
+               }
+                
+                
+            </style>
+        </head>
+        <body>
+            <div class="border">
+                <table class="closure">
+                    <a href="./index.html"><input type="button" value="Home" style="margin-left: 560px; margin-top: 70px; margin-bottom: 0px;background-color: purple;border-color: black; border-width: 2px; border-radius: 20%; color: aquamarine; width: 60px; height: 30px"></a>
+                    <div class="contain">
+                        
+                    <tr>
+                        <td colspan="5"><input type="text" id="input"><td>
+                    </tr><tr><td colspan="5"><input type="text" id="result"></td></tr>
+                    </div>
+                    <div id="funct">
+                    <tr>
+                        <td><input style="background-color: lightgray" type="button" value="sqrt" onclick="display('sqrt(')"></td>
+                        <td><input style="background-color: lightgray"type="button" value="(" onclick="display('(')"></td>
+                        <td><input style="background-color: lightgray"type="button" value=")" onclick="display(')')"></td>
+                        <td><input style="background-color: lightgray"type="button" value="x^" onclick="display('^')"></td>
+                        <td><input style="background-color: lightgray"type="button" value="!" onclick="display('!')"></td>
+
+                    </tr>
+                    <tr>
+                        <td><input style="background-color: lightgray"type="button" value="sin" onclick="display('sin(')"></td>
+                        <td><input style="background-color: lightgray"type="button" value="cos" onclick="display('cos(')"></td>
+                        <td><input style="background-color: lightgray"type="button" value="tan" onclick="display('tan(')"></td>
+                        <td><input style="background-color: lightgray"type="button" value="cot" onclick="display('cot(')"></td>
+                        <td><input style="background-color: lightgray"type="button" value="Rnd" onclick="myRound()"></td>
+    
+                    </tr>
+                    </div>
+                    <div class="norm">
+                    <tr>
+                        <td><input style="color: white;"type="button" value="7" onclick="display('7')"></td>
+                        <td><input style="color: white;"type="button" value="8" onclick="display('8')"></td>
+                        <td><input style="color: white;"type="button" value="9" onclick="display('9')"></td>
+                        <td><input style="color: white; background-color: rgb(247, 247, 140);" type="button" value="DEL" onclick="del()"></td>
+                        <td><input style="color: white; background-color: rgb(247, 77, 77);" type="button" value="AC" onclick="erase()"></td>
+        
+                    </tr>
+                    <tr>
+                        <td><input style="color: white;"type="button" value="4" onclick="display('4')"></td>
+                        <td><input style="color: white;"type="button" value="5" onclick="display('5')"></td>
+                        <td><input style="color: white;"type="button" value="6" onclick="display('6')"></td>
+                        <td><input style="color: white;"type="button" value="*" onclick="display('*')"></td>
+                        <td><input style="color: white;"type="button" value="/" onclick="display('/')"></td>
+        
+                    </tr>
+                    <tr>
+                        <td><input style="color: white;"type="button" value="1" onclick="display('1')"></td>
+                        <td><input style="color: white;"type="button" value="2" onclick="display('2')"></td>
+                        <td><input style="color: white;"type="button" value="3" onclick="display('3')"></td>
+                        <td><input style="color: white;"type="button" value="+" onclick="display('+')"></td>
+                        <td><input style="color: white;"type="button" value="-" onclick="display('-')"></td>
+            
+                    </tr>
+                    <tr>
+                        <td><input style="color: white;"type="button" value="0" onclick="display('0')"></td>
+                        <td><input style="color: white;"type="button" value="." onclick="display('.')"></td>
+                        <td><input style="color: white;"type="button" value="*10^" onclick="display('*10^')"></td>
+                        <td><input style="color: white;"type="button" value="Ans" onclick="display('Ans')"></td>
+                        <td><input style="color: white;"type="button" value="=" onclick="Answer()"></td>
+                
+                    </tr>
+                    </div>
+    
+
+                </table>
+            </div>
+            <script>
+
+                function solveFact(arr1){
+                    let sum=0
+                    let ind=0
+                    let sq=1
+                    let arr2 = []
+                    let reus = []
+                    
+                    for (let suby of arr1){
+                        
+                        if (suby=="!"){
+                            let k=1
+                            let y=""
+                            let z=""
+                            while((arr1[ind-k] != "+") && (arr1[ind-k] != "-") && (arr1[ind-k] != "*") && (arr1[ind-k] != "/") && (arr1[ind-k] != ")") && (arr1[ind-k] != "(") && (ind-k) >= 0){
+                                y += arr1[ind-k]
+                                reus.push(ind-k)
+                                k++
+                            }
+                            b=y
+                            let p = 1
+                            for (let j of b){
+                                
+                                z=z + (b[(b.length)-p])
+                                
+                                p = p + 1
+                            }
+                            arr2.push(z)
+                        }
+                        ind=ind+1
+                    }
+                    reus.sort(function(a,b){return a-b})
+                    
+                    //console.log(reus)
+                    //console.log(arr2)
+                    let arreply = []
+                    for (let arrs of arr2){
+                        
+                        let facto=1
+                        while(arrs != 0){
+                            facto=facto*arrs
+                            arrs--;
+                        }
+                        
+                        arreply.push(facto)
+                    }
+                    //console.log(arreply) 
+                    
+                    // replace a particular character without replacing other character that are same
+                    function rep(str,index,chr){
+                        if(index > str.length-1) return str;
+                        return str.substr(0,index) + chr + str.substr(index+1);
+                    }
+                    //let b=rep(arr1,0,"b")
+                    //console.log(b)
+                    
+                    String.prototype.removey = function (i){
+                        var temp = this.split('');
+                        temp.splice(i,1);
+                        return temp.join('');
+                    }
+                    //console.log(arr1)
+                    let v=0
+                    for (let wise of reus){
+                        
+                        arr1=arr1.removey(wise-v)
+                        v++
+                    }
+
+                    
+                    
+                    //console.log(arr1)
+                    
+                    function rep(str,index,chr){
+                        if(index > str.length-1) return str;
+                        return str.substr(0,index) + chr + str.substr(index+1);
+                    }
+                    ind=0
+                    indx1=0
+                    indx=0
+                    for (let vall of arr1){
+                        if(vall=="!"){
+                            arr1=rep(arr1,(ind+indx1),arreply[indx]+"!")
+                            indx1 =indx1-1
+                            
+                            indx1=indx1+1+(String(arreply[indx]).length)
+                            indx++;
+                        
+                        }
+                        ind=ind+1
+                    }
+                    return arr1
+                }
+
+
+                function syntas(habyb){
+
+                    function rep(str,index,chr){
+                        if(index > str.length-1) return str;
+                    return str.substr(0,index) + chr + str.substr(index+1);
+                    }
+
+                   let indy=0
+                   let indey=0
+                   let habr = []
+                   let juj = []
+                   for (let well of habyb){
+                       if (well == "(" && habyb[indy-1] != "+" && habyb[indy-1] != "-" && habyb[indy-1] != "*" && habyb[indy-1] != "(" && habyb[indy-1] != "/" && habyb[indy-1] != "n" && habyb[indy-1] != "s" && habyb[indy-1] != "t" && habyb[indy-1] != "^" && indy != (habyb.length-habyb.length)){
+                           //juj.push(habyb[indy-1])
+                           //habr.push(indy-1)
+                           habyb=rep(habyb,indy,"*(")
+            
+                           indy=indy+1
+                        }
+                        if(well == ")" && habyb[indy+1] != "+" && habyb[indy+1] != "-" && habyb[indy+1] != "!" && habyb[indy+1] != "*" && habyb[indy+1] != "/" && habyb[indy+1] != "(" && habyb[indy+1] != ")"  && habyb[indy+1] != "^" && well != habyb[(habyb.length)-1] ){
+        
+            
+                           habyb=rep(habyb,indy,")*")
+            
+                           indy=indy+1
+                        }
+                        if(well == "s" && habyb[indy-1] != "+" && habyb[indy-1] != "-" && indy != (habyb.length-habyb.length) && habyb[indy-1] != "*" && habyb[indy-1] != "/" && habyb[indy-1] != "o" && habyb[indy-1] != "(" && habyb[indy-1] != "^"){
+        
+                           habyb=rep(habyb,indy,"*s")
+            
+                           indy=indy+1
+                        }
+                        if(well == "c" && habyb[indy-1] != "+" && habyb[indy-1] != "-" && indy != (habyb.length-habyb.length) && habyb[indy-1] != "*" && habyb[indy-1] != "/"  && habyb[indy-1] != "(" && habyb[indy-1] != "^"){
+        
+                           habyb=rep(habyb,indy,"*c")
+            
+                           indy=indy+1
+                        }
+                        if(well == "t" && habyb[indy-1] != "+" && habyb[indy-1] != "-" && indy != (habyb.length-habyb.length) && habyb[indy-1] != "*" && habyb[indy-1] != "/" && habyb[indy-1] != "r" && habyb[indy-1] != "o" && habyb[indy-1] != "(" && habyb[indy-1] != "^"){
+        
+                           habyb=rep(habyb,indy,"*t")
+            
+                           indy=indy+1
+                        }
+
+                    indy=indy+1
+                    }
+                    return habyb 
+                }
+
+
+
+                function display(val){
+                    
+                   
+                    if ((document.getElementById("result").value) != ""){
+                        if (val=="Ans"){
+                        document.getElementById("input").value = val
+                        document.getElementById("funct").value = document.getElementById("result").value
+                        reAns = document.getElementById("funct").value 
+                        document.getElementById("result").value = ""
+                    }  else {
+                        document.getElementById("input").value = val
+                        document.getElementById("result").value = ""
+                    }}
+                    else{
+                    
+                        document.getElementById("input").value += val
+                    
+                    }
+                }
+
+                function Answer(){
+                         
+                    
+                    let j = document.getElementById("input").value 
+
+                    if (j.includes("++") || j.includes("+-") || j.includes("+*") || j.includes("+/")
+                    || j.includes("-+") || j.includes("--") || j.includes("-/") || j.includes("-*")
+                    || j.includes("//") || j.includes("/+") || j.includes("/*") || j.includes("/-")
+                    || j.includes("**") || j.includes("*/") || j.includes("*+") || j.includes("*-")){
+
+                        document.getElementById("result").value= "Syntax Error";
+
+                    }
+                    else {
+                        if (j.includes("!")){
+                            j=solveFact(j)
+                         }
+                         if (j.includes("(") || j.includes(")") || j.includes("s") || j.includes("c") || j.includes("t")){
+                             j=syntas(j)
+                         }
+                         
+                        //let ridwaan = ""
+                        if (j.includes("sqrt(") || j.includes("Ans") || j.includes("sin(") || j.includes("cos(") 
+                        || j.includes("tan(") || j.includes("cot(") || j.includes("^") || j.includes("ln")
+                        || j.includes("fac(") || j.includes("!")){                        
+                            function escapeRegExp(string){
+                            return string.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")
+                            }
+                        function replaceAll(str, term, replacement){
+                            return str.replace(new RegExp(escapeRegExp(term), "g"),replacement);
+                        }
+                           let sqrts = replaceAll(j,"sqrt(","Math.sqrt(")
+                           let sinAns = replaceAll(sqrts,"sin(","Math.sin((3.142/180)*")
+                           let cosAns = replaceAll(sinAns,"cos(","Math.cos((3.142/180)*")
+                           let tanAns = replaceAll(cosAns,"tan(","Math.tan((3.142/180)*")
+                           let cotAns = replaceAll(tanAns,"cot(","1/Math.tan((3.142/180)*")
+                           let powerAns = replaceAll(cotAns,"^","**")
+                           let factAns = replaceAll(powerAns,"!","")
+                           //let reAns = document.getElementById("result").value
+                        
+                           let mody = replaceAll(factAns,"Ans",document.getElementById("funct").value)
+                        
+                            let s = eval(mody)
+
+                            document.getElementById("result").value= s;
+                            }
+                        else { 
+                            
+                            let s = eval(j)                    
+                            document.getElementById("result").value= s;
+                               }
+                        }}
+                function del(){
+                    let prob = document.getElementById("input").value
+                    if (document.getElementById("result").value == ""){
+                   let newVal = prob.slice(0,((prob.length)-1))
+                    document.getElementById("input").value = newVal
+                    }
+                    else {
+                        document.getElementById("input").value = ""
+                        document.getElementById("result").value = ""
+                    }
+                }
+                function erase(){
+                
+                    document.getElementById("input").value = ""
+                    document.getElementById("result").value = "";
+                
+
+                }
+                function myRound(){
+                   let m =Number(document.getElementById("result").value)
+                    document.getElementById("result").value = m.toFixed(3)
+                }
+            </Script>
+        </body>
+    </html>
+       
